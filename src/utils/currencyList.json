@@ -1,0 +1,628 @@
+{
+  "currency": [
+    {
+      "id": "AED",
+      "name": "Dirham dos Emirados"
+    },
+    {
+      "id": "AFN",
+      "name": "Afghani do Afeganistão"
+    },
+    {
+      "id": "ALL",
+      "name": "Lek Albanês"
+    },
+    {
+      "id": "AMD",
+      "name": "Dram Armênio"
+    },
+    {
+      "id": "ANG",
+      "name": "Guilder das Antilhas"
+    },
+    {
+      "id": "AOA",
+      "name": "Kwanza Angolano"
+    },
+    {
+      "id": "ARS",
+      "name": "Peso Argentino"
+    },
+    {
+      "id": "AUD",
+      "name": "Dólar Australiano"
+    },
+    {
+      "id": "AZN",
+      "name": "Manat Azeri"
+    },
+    {
+      "id": "BAM",
+      "name": "Marco Conversível"
+    },
+    {
+      "id": "BBD",
+      "name": "Dólar de Barbados"
+    },
+    {
+      "id": "BDT",
+      "name": "Taka de Bangladesh"
+    },
+    {
+      "id": "BGN",
+      "name": "Lev Búlgaro"
+    },
+    {
+      "id": "BHD",
+      "name": "Dinar do Bahrein"
+    },
+    {
+      "id": "BIF",
+      "name": "Franco Burundinense"
+    },
+    {
+      "id": "BND",
+      "name": "Dólar de Brunei"
+    },
+    {
+      "id": "BOB",
+      "name": "Boliviano"
+    },
+    {
+      "id": "BRL",
+      "name": "Real Brasileiro"
+    },
+    {
+      "id": "BRL",
+      "name": ">Real Brasileiro Turismo<"
+    },
+    {
+      "id": "BSD",
+      "name": "Dólar das Bahamas"
+    },
+    {
+      "id": "BTC",
+      "name": "Bitcoin"
+    },
+    {
+      "id": "BWP",
+      "name": "Pula de Botswana"
+    },
+    {
+      "id": "BYN",
+      "name": "Rublo Bielorrusso"
+    },
+    {
+      "id": "BZD",
+      "name": "Dólar de Belize"
+    },
+    {
+      "id": "CAD",
+      "name": "Dólar Canadense"
+    },
+    {
+      "id": "CHF",
+      "name": "Franco Suíço"
+    },
+    {
+      "id": "CHF",
+      "name": "TS>Franco Suíço</C"
+    },
+    {
+      "id": "CLP",
+      "name": "Peso Chileno"
+    },
+    {
+      "id": "CNH",
+      "name": "Yuan chinês offshore"
+    },
+    {
+      "id": "CNY",
+      "name": "Yuan Chinês"
+    },
+    {
+      "id": "COP",
+      "name": "Peso Colombiano"
+    },
+    {
+      "id": "CRC",
+      "name": "Colón Costarriquenho"
+    },
+    {
+      "id": "CUP",
+      "name": "Peso Cubano"
+    },
+    {
+      "id": "CVE",
+      "name": "Escudo cabo-verdiano"
+    },
+    {
+      "id": "CZK",
+      "name": "Coroa Checa"
+    },
+    {
+      "id": "DJF",
+      "name": "Franco do Djubouti"
+    },
+    {
+      "id": "DKK",
+      "name": "Coroa Dinamarquesa"
+    },
+    {
+      "id": "DOG",
+      "name": ">Dogecoin<"
+    },
+    {
+      "id": "DOP",
+      "name": "Peso Dominicano"
+    },
+    {
+      "id": "DZD",
+      "name": "Dinar Argelino"
+    },
+    {
+      "id": "EGP",
+      "name": "Libra Egípcia"
+    },
+    {
+      "id": "ETB",
+      "name": "Birr Etíope"
+    },
+    {
+      "id": "ETH",
+      "name": "Ethereum"
+    },
+    {
+      "id": "EUR",
+      "name": "Euro"
+    },
+    {
+      "id": "FJD",
+      "name": "Dólar de Fiji"
+    },
+    {
+      "id": "GBP",
+      "name": "Libra Esterlina"
+    },
+    {
+      "id": "GEL",
+      "name": "Lari Georgiano"
+    },
+    {
+      "id": "GHS",
+      "name": "Cedi Ganês"
+    },
+    {
+      "id": "GMD",
+      "name": "Dalasi da Gâmbia"
+    },
+    {
+      "id": "GNF",
+      "name": "Franco de Guiné"
+    },
+    {
+      "id": "GTQ",
+      "name": "Quetzal Guatemalteco"
+    },
+    {
+      "id": "HKD",
+      "name": "Dólar de Hong Kong"
+    },
+    {
+      "id": "HNL",
+      "name": "Lempira Hondurenha"
+    },
+    {
+      "id": "HRK",
+      "name": "Kuna Croata"
+    },
+    {
+      "id": "HTG",
+      "name": "Gourde Haitiano"
+    },
+    {
+      "id": "HUF",
+      "name": "Florim Húngaro"
+    },
+    {
+      "id": "IDR",
+      "name": "Rupia Indonésia"
+    },
+    {
+      "id": "ILS",
+      "name": "Novo Shekel Israelense"
+    },
+    {
+      "id": "INR",
+      "name": "Rúpia Indiana"
+    },
+    {
+      "id": "IQD",
+      "name": "Dinar Iraquiano"
+    },
+    {
+      "id": "IRR",
+      "name": "Rial Iraniano"
+    },
+    {
+      "id": "ISK",
+      "name": "Coroa Islandesa"
+    },
+    {
+      "id": "JMD",
+      "name": "Dólar Jamaicano"
+    },
+    {
+      "id": "JOD",
+      "name": "Dinar Jordaniano"
+    },
+    {
+      "id": "JPY",
+      "name": "Iene Japonês"
+    },
+    {
+      "id": "JPY",
+      "name": "TS>Iene Japonês</J"
+    },
+    {
+      "id": "KES",
+      "name": "Shilling Queniano"
+    },
+    {
+      "id": "KGS",
+      "name": "Som Quirguistanês"
+    },
+    {
+      "id": "KHR",
+      "name": "Riel Cambojano"
+    },
+    {
+      "id": "KMF",
+      "name": "Franco Comorense"
+    },
+    {
+      "id": "KRW",
+      "name": "Won Sul-Coreano"
+    },
+    {
+      "id": "KWD",
+      "name": "Dinar Kuwaitiano"
+    },
+    {
+      "id": "KYD",
+      "name": "Dólar das Ilhas Cayman"
+    },
+    {
+      "id": "KZT",
+      "name": "Tengue Cazaquistanês"
+    },
+    {
+      "id": "LAK",
+      "name": "Kip Laosiano"
+    },
+    {
+      "id": "LBP",
+      "name": "Libra Libanesa"
+    },
+    {
+      "id": "LKR",
+      "name": "Rúpia de Sri Lanka"
+    },
+    {
+      "id": "LSL",
+      "name": "Loti do Lesoto"
+    },
+    {
+      "id": "LTC",
+      "name": "Litecoin"
+    },
+    {
+      "id": "LYD",
+      "name": "Dinar Líbio"
+    },
+    {
+      "id": "MAD",
+      "name": "Dirham Marroquino"
+    },
+    {
+      "id": "MDL",
+      "name": "Leu Moldavo"
+    },
+    {
+      "id": "MGA",
+      "name": "Ariary Madagascarense"
+    },
+    {
+      "id": "MKD",
+      "name": "Denar Macedônio"
+    },
+    {
+      "id": "MMK",
+      "name": "Kyat de Mianmar"
+    },
+    {
+      "id": "MNT",
+      "name": "Mongolian Tugrik"
+    },
+    {
+      "id": "MOP",
+      "name": "Pataca de Macau"
+    },
+    {
+      "id": "MRO",
+      "name": "Ouguiya Mauritana"
+    },
+    {
+      "id": "MUR",
+      "name": "Rúpia Mauriciana"
+    },
+    {
+      "id": "MVR",
+      "name": "Rufiyaa Maldiva"
+    },
+    {
+      "id": "MWK",
+      "name": "Kwacha Malauiana"
+    },
+    {
+      "id": "MXN",
+      "name": "Peso Mexicano"
+    },
+    {
+      "id": "MYR",
+      "name": "Ringgit Malaio"
+    },
+    {
+      "id": "MZN",
+      "name": "Metical de Moçambique"
+    },
+    {
+      "id": "NAD",
+      "name": "Dólar Namíbio"
+    },
+    {
+      "id": "NGN",
+      "name": "Naira Nigeriana"
+    },
+    {
+      "id": "NGN",
+      "name": ">Naira Nigeriana<"
+    },
+    {
+      "id": "NGN",
+      "name": "ARALLEL>Naira Nigeriana</NGNPAR"
+    },
+    {
+      "id": "NIO",
+      "name": "Córdoba Nicaraguense"
+    },
+    {
+      "id": "NOK",
+      "name": "Coroa Norueguesa"
+    },
+    {
+      "id": "NPR",
+      "name": "Rúpia Nepalesa"
+    },
+    {
+      "id": "NZD",
+      "name": "Dólar Neozelandês"
+    },
+    {
+      "id": "OMR",
+      "name": "Rial Omanense"
+    },
+    {
+      "id": "PAB",
+      "name": "Balboa Panamenho"
+    },
+    {
+      "id": "PEN",
+      "name": "Sol do Peru"
+    },
+    {
+      "id": "PGK",
+      "name": "Kina Papua-Nova Guiné"
+    },
+    {
+      "id": "PHP",
+      "name": "Peso Filipino"
+    },
+    {
+      "id": "PKR",
+      "name": "Rúpia Paquistanesa"
+    },
+    {
+      "id": "PLN",
+      "name": "Zlóti Polonês"
+    },
+    {
+      "id": "PYG",
+      "name": "Guarani Paraguaio"
+    },
+    {
+      "id": "QAR",
+      "name": "Rial Catarense"
+    },
+    {
+      "id": "RON",
+      "name": "Leu Romeno"
+    },
+    {
+      "id": "RSD",
+      "name": "Dinar Sérvio"
+    },
+    {
+      "id": "RUB",
+      "name": "Rublo Russo"
+    },
+    {
+      "id": "RUB",
+      "name": "OD>Rublo Russo</R"
+    },
+    {
+      "id": "RUB",
+      "name": "OM>Rublo Russo</R"
+    },
+    {
+      "id": "RWF",
+      "name": "Franco Ruandês"
+    },
+    {
+      "id": "SAR",
+      "name": "Riyal Saudita"
+    },
+    {
+      "id": "SCR",
+      "name": "Rúpias de Seicheles"
+    },
+    {
+      "id": "SDG",
+      "name": "Libra Sudanesa"
+    },
+    {
+      "id": "SDR",
+      "name": "DSE"
+    },
+    {
+      "id": "SEK",
+      "name": "Coroa Sueca"
+    },
+    {
+      "id": "SGD",
+      "name": "Dólar de Cingapura"
+    },
+    {
+      "id": "SOS",
+      "name": "Shilling Somaliano"
+    },
+    {
+      "id": "STD",
+      "name": "Dobra São Tomé/Príncipe"
+    },
+    {
+      "id": "SVC",
+      "name": "Colon de El Salvador"
+    },
+    {
+      "id": "SYP",
+      "name": "Libra Síria"
+    },
+    {
+      "id": "SZL",
+      "name": "Lilangeni Suazilandês"
+    },
+    {
+      "id": "THB",
+      "name": "Baht Tailandês"
+    },
+    {
+      "id": "TJS",
+      "name": "Somoni do Tajiquistão"
+    },
+    {
+      "id": "TMT",
+      "name": "TMT"
+    },
+    {
+      "id": "TND",
+      "name": "Dinar Tunisiano"
+    },
+    {
+      "id": "TRY",
+      "name": "Nova Lira Turca"
+    },
+    {
+      "id": "TTD",
+      "name": "Dólar de Trinidad"
+    },
+    {
+      "id": "TWD",
+      "name": "Dólar Taiuanês"
+    },
+    {
+      "id": "TZS",
+      "name": "Shilling Tanzaniano"
+    },
+    {
+      "id": "UAH",
+      "name": "Hryvinia Ucraniana"
+    },
+    {
+      "id": "UGX",
+      "name": "Shilling Ugandês"
+    },
+    {
+      "id": "USD",
+      "name": "Dólar Americano"
+    },
+    {
+      "id": "USD",
+      "name": ">Dólar Americano<"
+    },
+    {
+      "id": "UYU",
+      "name": "Peso Uruguaio"
+    },
+    {
+      "id": "UZS",
+      "name": "Som Uzbequistanês"
+    },
+    {
+      "id": "VEF",
+      "name": "Bolívar Venezuelano"
+    },
+    {
+      "id": "VND",
+      "name": "Dong Vietnamita"
+    },
+    {
+      "id": "VUV",
+      "name": "Vatu de Vanuatu"
+    },
+    {
+      "id": "XAF",
+      "name": "Franco CFA Central"
+    },
+    {
+      "id": "XAG",
+      "name": ">XPrata<"
+    },
+    {
+      "id": "XBR",
+      "name": "Brent Spot"
+    },
+    {
+      "id": "XCD",
+      "name": "Dólar do Caribe Oriental"
+    },
+    {
+      "id": "XOF",
+      "name": "Franco CFA Ocidental"
+    },
+    {
+      "id": "XPF",
+      "name": "Franco CFP"
+    },
+    {
+      "id": "XRP",
+      "name": "XRP"
+    },
+    {
+      "id": "YER",
+      "name": "Riyal Iemenita"
+    },
+    {
+      "id": "ZAR",
+      "name": "Rand Sul-Africano"
+    },
+    {
+      "id": "ZMK",
+      "name": "Kwacha Zambiana"
+    },
+    {
+      "id": "ZWL",
+      "name": "Dólar Zimbabuense"
+    }
+  ]
+}
