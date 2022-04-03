@@ -73,8 +73,8 @@
       "name": "Real Brasileiro"
     },
     {
-      "id": "BRL",
-      "name": ">Real Brasileiro Turismo<"
+      "id": "BRLT",
+      "name": "Real Brasileiro Turismo"
     },
     {
       "id": "BSD",
@@ -555,10 +555,6 @@
     {
       "id": "USD",
       "name": "Dólar Americano"
-    },
-    {
-      "id": "USD",
-      "name": ">Dólar Americano<"
     },
     {
       "id": "UYU",

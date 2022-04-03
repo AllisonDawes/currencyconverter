@@ -62,12 +62,14 @@ export const ContainerInfo = styled.div`
   flex-direction: column;
   align-items: flex-start;
 
-  h4 {
+  h5 {
     color: var(--shape);
+    font-weight: 400;
   }
 
   h1 {
     color: var(--shape);
-    margin: 1rem 0;
+    font-weight: 500;
+    margin: 0.5rem 0;
   }
 `;

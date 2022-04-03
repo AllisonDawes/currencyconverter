@@ -26,9 +26,37 @@ export function Converter() {
   const [currencySecond, setCurrencySecond] = useState("BRL");
   const [inputFirst, setInputFirst] = useState("1");
   const [inputSecond, setInputSecond] = useState("");
+  const [newDate, setNewDate] = useState("");
+
+  const getDateData = useCallback(() => {
+    const months = [
+      "January",
+      "February",
+      "March",
+      "April",
+      "May",
+      "June",
+      "July",
+      "August",
+      "September",
+      "October",
+      "November",
+      "December",
+    ];
+
+    const date = new Date();
+
+    const month = months[date.getMonth()];
+
+    setNewDate(
+      `${String(
+        date.getDate()
+      )} de ${month} de ${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`
+    );
+  }, []);
 
   const loadCurrency = useCallback(
-    async (first = currencyFirst, second = currencySecond) => {
+    async (first: string = currencyFirst, second: string = currencySecond) => {
       if (first.length > 0 && second.length > 0) {
         try {
           const response = await axios.get(
@@ -42,12 +70,13 @@ export function Converter() {
           });
 
           setDataResponse(result);
+          getDateData();
         } catch (err) {
           console.log(err);
         }
       }
     },
-    [currencyFirst, currencySecond]
+    [currencyFirst, currencySecond, getDateData]
   );
 
   const calculatorCurrencyEventInputFirst = useCallback(
@@ -126,13 +155,13 @@ export function Converter() {
       </form>
 
       <ContainerInfo>
-        <h4>
-          {inputFirst} {currencyFirst} equivale a
-        </h4>
+        <h5>1 {currencyFirst} equivale a</h5>
 
         <h1>
-          {inputSecond} {currencySecond}
+          {dataResponse.bid} {currencySecond}
         </h1>
+
+        <h5>{newDate}</h5>
       </ContainerInfo>
     </Container>
   );
