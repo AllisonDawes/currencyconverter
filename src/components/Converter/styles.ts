@@ -59,17 +59,23 @@ export const ContainerInfo = styled.div`
   padding: 1rem 0;
 
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 
-  h5 {
-    color: var(--shape);
-    font-weight: 400;
-  }
+  div {
+    display: flex;
+    flex-direction: column;
 
-  h1 {
-    color: var(--shape);
-    font-weight: 500;
-    margin: 0.5rem 0;
+    h5 {
+      color: var(--shape);
+      font-weight: 400;
+    }
+
+    h1 {
+      color: var(--shape);
+      font-weight: 500;
+      margin: 0.5rem 0;
+    }
   }
 `;

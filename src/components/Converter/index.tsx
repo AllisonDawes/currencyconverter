@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
 import axios from "axios";
+import Chart from "react-apexcharts";
+import { ApexOptions } from "apexcharts";
 
 import currencyList from "../../utils/currencyList.json";
 
@@ -22,11 +24,39 @@ interface Props {
 export function Converter() {
   const [data] = useState(currencyList);
   const [dataResponse, setDataResponse] = useState({} as Props);
+  const [dataQuotes, setDataQuotes] = useState([]);
+  const [dateLastQuotes, setDateLastQuotes] = useState([]);
   const [currencyFirst, setCurrencyFirst] = useState("USD");
   const [currencySecond, setCurrencySecond] = useState("BRL");
   const [inputFirst, setInputFirst] = useState("1");
   const [inputSecond, setInputSecond] = useState("");
   const [newDate, setNewDate] = useState("");
+
+  var options: ApexOptions = {
+    chart: {
+      toolbar: {
+        show: false,
+      },
+      zoom: {
+        enabled: false,
+      },
+      foreColor: `var(--text-body)`,
+      type: "area",
+    },
+    grid: {
+      show: true,
+    },
+    xaxis: {
+      categories: dateLastQuotes,
+    },
+  };
+
+  const series = [
+    {
+      name: "series-1",
+      data: dataQuotes,
+    },
+  ];
 
   const getDateData = useCallback(() => {
     const months = [
@@ -79,6 +109,37 @@ export function Converter() {
     [currencyFirst, currencySecond, getDateData]
   );
 
+  const loadQuotesCurrency = useCallback(
+    async (first: string = currencyFirst, second: string = currencySecond) => {
+      try {
+        const response = await axios.get(
+          `https://economia.awesomeapi.com.br/json/daily/${first}-${second}/5`
+        );
+
+        const dataCurrency = response.data.map((item: Props) => {
+          return Number(item.bid);
+        });
+
+        const dataQuoteFormatted = dataCurrency.reverse();
+
+        const dateLastQuotes = response.data.map((item: Props) => {
+          return `${new Date(Number(item.timestamp)).getHours()}:${
+            new Date(Number(item.timestamp)).getMinutes() < 10
+              ? "0" + new Date(Number(item.timestamp)).getMinutes()
+              : new Date(Number(item.timestamp)).getMinutes()
+          }`;
+        });
+
+        setDateLastQuotes(dateLastQuotes.reverse());
+
+        setDataQuotes(dataQuoteFormatted);
+      } catch (err) {
+        console.log("Erro " + err);
+      }
+    },
+    [currencyFirst, currencySecond]
+  );
+
   const calculatorCurrencyEventInputFirst = useCallback(
     (event) => {
       setInputFirst(event.target.value);
@@ -103,8 +164,15 @@ export function Converter() {
 
   useEffect(() => {
     loadCurrency(currencyFirst, currencySecond);
+    loadQuotesCurrency();
     setInputSecond(String(dataResponse.bid));
-  }, [loadCurrency, currencyFirst, currencySecond, dataResponse.bid]);
+  }, [
+    loadCurrency,
+    currencyFirst,
+    currencySecond,
+    dataResponse.bid,
+    loadQuotesCurrency,
+  ]);
 
   return (
     <Container>
@@ -155,13 +223,19 @@ export function Converter() {
       </form>
 
       <ContainerInfo>
-        <h5>1 {currencyFirst} equivale a</h5>
+        <div>
+          <h5>1 {currencyFirst} equivale a</h5>
 
-        <h1>
-          {dataResponse.bid} {currencySecond}
-        </h1>
+          <h1>
+            {dataResponse.bid} {currencySecond}
+          </h1>
 
-        <h5>{newDate}</h5>
+          <h5>{newDate}</h5>
+        </div>
+
+        <div>
+          <Chart options={options} series={series} type="area" height={160} />
+        </div>
       </ContainerInfo>
     </Container>
   );
