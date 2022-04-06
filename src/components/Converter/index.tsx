@@ -5,6 +5,8 @@ import { ApexOptions } from "apexcharts";
 
 import currencyList from "../../utils/currencyList.json";
 
+import spinnerGIF from "../../assets/spinner.gif";
+
 import { Container, ContainerInfo } from "./styles";
 
 interface Props {
@@ -26,6 +28,9 @@ export function Converter() {
   const [dataResponse, setDataResponse] = useState({} as Props);
   const [dataQuotes, setDataQuotes] = useState([]);
   const [dateLastQuotes, setDateLastQuotes] = useState([]);
+
+  const [loading, setLoading] = useState(false);
+
   const [currencyFirst, setCurrencyFirst] = useState("USD");
   const [currencySecond, setCurrencySecond] = useState("BRL");
   const [inputFirst, setInputFirst] = useState("1");
@@ -53,7 +58,7 @@ export function Converter() {
 
   const series = [
     {
-      name: "series-1",
+      name: "Valor",
       data: dataQuotes,
     },
   ];
@@ -81,33 +86,11 @@ export function Converter() {
     setNewDate(
       `${String(
         date.getDate()
-      )} de ${month} de ${date.getFullYear()} - ${date.getHours()}:${date.getMinutes()}`
+      )} de ${month} de ${date.getFullYear()} - ${date.getHours()}:${
+        date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes()
+      }`
     );
   }, []);
-
-  const loadCurrency = useCallback(
-    async (first: string = currencyFirst, second: string = currencySecond) => {
-      if (first.length > 0 && second.length > 0) {
-        try {
-          const response = await axios.get(
-            `https://economia.awesomeapi.com.br/json/last/${first}-${second}`
-          );
-
-          const currencys = response.data;
-
-          const [result] = Object.keys(currencys).map(function (key) {
-            return currencys[key];
-          });
-
-          setDataResponse(result);
-          getDateData();
-        } catch (err) {
-          console.log(err);
-        }
-      }
-    },
-    [currencyFirst, currencySecond, getDateData]
-  );
 
   const loadQuotesCurrency = useCallback(
     async (first: string = currencyFirst, second: string = currencySecond) => {
@@ -122,11 +105,31 @@ export function Converter() {
 
         const dataQuoteFormatted = dataCurrency.reverse();
 
+        /**
+         * Converter timestamp em data:
+         *
+         * var date = new Date(1389135600*1000); // converte para data
+         * console.log(date.toLocaleDateString("pt-BR")); //formata de acordo com o requisito
+         */
+
+        const months = [
+          "Jan",
+          "Feb",
+          "Mar",
+          "Apr",
+          "May",
+          "Jun",
+          "Jul",
+          "Aug",
+          "Sep",
+          "Oct",
+          "Nov",
+          "Dec",
+        ];
+
         const dateLastQuotes = response.data.map((item: Props) => {
-          return `${new Date(Number(item.timestamp)).getHours()}:${
-            new Date(Number(item.timestamp)).getMinutes() < 10
-              ? "0" + new Date(Number(item.timestamp)).getMinutes()
-              : new Date(Number(item.timestamp)).getMinutes()
+          return `${new Date(Number(item.timestamp) * 1000).getDate()}/${
+            months[new Date(Number(item.timestamp) * 1000).getMonth()]
           }`;
         });
 
@@ -138,6 +141,36 @@ export function Converter() {
       }
     },
     [currencyFirst, currencySecond]
+  );
+
+  const loadCurrency = useCallback(
+    async (first: string = currencyFirst, second: string = currencySecond) => {
+      setLoading(true);
+      if (first.length > 0 && second.length > 0) {
+        try {
+          const response = await axios.get(
+            `https://economia.awesomeapi.com.br/json/last/${first}-${second}`
+          );
+
+          const currencys = response.data;
+
+          const [result] = Object.keys(currencys).map(function (key) {
+            return currencys[key];
+          });
+
+          setDataResponse(result);
+          getDateData();
+
+          loadQuotesCurrency();
+
+          setLoading(false);
+        } catch (err) {
+          setLoading(false);
+          console.log(err);
+        }
+      }
+    },
+    [currencyFirst, currencySecond, getDateData, loadQuotesCurrency]
   );
 
   const calculatorCurrencyEventInputFirst = useCallback(
@@ -164,7 +197,6 @@ export function Converter() {
 
   useEffect(() => {
     loadCurrency(currencyFirst, currencySecond);
-    loadQuotesCurrency();
     setInputSecond(String(dataResponse.bid));
   }, [
     loadCurrency,
@@ -223,19 +255,30 @@ export function Converter() {
       </form>
 
       <ContainerInfo>
-        <div>
-          <h5>1 {currencyFirst} equivale a</h5>
+        {loading ? (
+          <img src={spinnerGIF} alt="" />
+        ) : (
+          <>
+            <div>
+              <h5>1 {currencyFirst} equivale a</h5>
 
-          <h1>
-            {dataResponse.bid} {currencySecond}
-          </h1>
+              <h1>
+                {dataResponse.bid} {currencySecond}
+              </h1>
 
-          <h5>{newDate}</h5>
-        </div>
+              <h5>{newDate}</h5>
+            </div>
 
-        <div>
-          <Chart options={options} series={series} type="area" height={160} />
-        </div>
+            <div>
+              <Chart
+                options={options}
+                series={series}
+                type="area"
+                height={160}
+              />
+            </div>
+          </>
+        )}
       </ContainerInfo>
     </Container>
   );

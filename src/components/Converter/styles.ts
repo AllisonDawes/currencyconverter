@@ -61,21 +61,28 @@ export const ContainerInfo = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+
+  img {
+    height: 5rem;
+    width: 5rem;
+
+    align-self: center;
+  }
 
   div {
     display: flex;
     flex-direction: column;
 
     h5 {
-      color: var(--shape);
+      color: var(--text-body);
       font-weight: 400;
     }
 
     h1 {
       color: var(--shape);
       font-weight: 500;
-      margin: 0.5rem 0;
+      margin: 1.2rem 0;
     }
   }
 `;
