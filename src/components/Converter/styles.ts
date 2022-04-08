@@ -55,11 +55,10 @@ export const Container = styled.div`
 export const ContainerInfo = styled.div`
   min-width: 38rem;
   width: 2rem;
-  margin: 1rem auto 0;
+  margin: 1rem auto;
   padding: 1rem 0;
 
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: center;
 
@@ -71,18 +70,55 @@ export const ContainerInfo = styled.div`
   }
 
   div {
+    width: 100%;
+
     display: flex;
-    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
 
-    h5 {
-      color: var(--text-body);
-      font-weight: 400;
-    }
+    div {
+      display: flex;
+      flex-direction: column;
 
-    h1 {
-      color: var(--shape);
-      font-weight: 500;
-      margin: 1.2rem 0;
+      h5 {
+        color: var(--text-body);
+        font-weight: 400;
+      }
+
+      h1 {
+        color: var(--shape);
+        font-weight: 500;
+        margin: 1.2rem 0;
+      }
     }
+  }
+`;
+
+export const Separator = styled.div`
+  background: var(--input);
+  height: 1px;
+  margin-bottom: 2rem;
+`;
+
+export const ContainerContent = styled.div`
+  max-width: 38rem;
+  margin: 0 auto;
+
+  margin-top: 10rem;
+
+  h2 {
+    font-weight: 500;
+    color: var(--shape);
+
+    margin-bottom: 1rem;
+  }
+
+  h5 {
+    font-weight: 400;
+    color: var(--text-body);
+    text-align: justify;
+    line-height: 1.8;
+
+    margin-bottom: 2rem;
   }
 `;

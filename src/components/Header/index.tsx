@@ -1,13 +1,23 @@
 import React from "react";
 
-import { Container, Content, Title } from "./styles";
+import { Container } from "./styles";
 
 export function Header() {
   return (
     <Container>
-      <Content>
-        <Title>Data Converter</Title>
-      </Content>
+      <div>
+        <h2>converter.com</h2>
+
+        <div>
+          <ul>
+            <li>
+              <a href="#">Conversor de Moedas</a>
+              <a href="#">Links</a>
+              <a href="#">Sobre</a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </Container>
   );
 }

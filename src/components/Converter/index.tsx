@@ -7,7 +7,12 @@ import currencyList from "../../utils/currencyList.json";
 
 import spinnerGIF from "../../assets/spinner.gif";
 
-import { Container, ContainerInfo } from "./styles";
+import {
+  Container,
+  ContainerInfo,
+  ContainerContent,
+  Separator,
+} from "./styles";
 
 interface Props {
   ask: string;
@@ -47,6 +52,9 @@ export function Converter() {
       },
       foreColor: `var(--text-body)`,
       type: "area",
+    },
+    tooltip: {
+      enabled: false,
     },
     grid: {
       show: true,
@@ -258,7 +266,7 @@ export function Converter() {
         {loading ? (
           <img src={spinnerGIF} alt="" />
         ) : (
-          <>
+          <div>
             <div>
               <h5>1 {currencyFirst} equivale a</h5>
 
@@ -275,11 +283,67 @@ export function Converter() {
                 series={series}
                 type="area"
                 height={160}
+                width={400}
               />
             </div>
-          </>
+          </div>
         )}
       </ContainerInfo>
+
+      <ContainerContent>
+        <Separator />
+
+        <h2>O que é câmbio </h2>
+
+        <h5>
+          A taxa de câmbio é uma relação entre moedas de dois países que resulta
+          no preço de uma delas medido em relação à outra. Mas, além de
+          expressar quantitativamente a condição de troca entre duas moedas, a
+          taxa de câmbio expressa as relações de troca entre dois países. O
+          câmbio é uma das variáveis macroeconômicas mais importantes, sobretudo
+          para as relações comerciais e financeiras de um país com o conjunto
+          dos demais países. A taxa de câmbio é definida de forma direta quando
+          exprime o preço de uma unidade de moeda estrangeira em moeda nacional
+          - ou seja, exprime a quantidade de moeda nacional necessária para
+          comprar uma unidade de moeda estrangeira. Por exemplo, a taxa de
+          câmbio USD/EUR está definida de forma directa para os habitantes da
+          Zona Euro. Dado que a taxa de câmbio é um preço (ainda que seja o
+          preço de um bem sui generis: a moeda), esse preço é diferente na
+          compra e na venda. Assim, a taxa de câmbio para venda é o preço que o
+          banco (ou outro agente autorizado a operar pelo Banco Central) cobra,
+          em moeda nacional, ao vender moeda estrangeira (a um importador, por
+          exemplo). Já a taxa de compra é o preço, em moeda nacional, que o
+          banco paga pela moeda estrangeira que lhe é ofertada (exemplo, por um
+          exportador,).
+        </h5>
+
+        <h2>Operações de câmbio mais comuns</h2>
+        <h2>Câmbio para turismo:</h2>
+
+        <h5>
+          Qualquer pessoa que vai viajar para o exterior pode comprar moeda do
+          país estrangeiro. Além de dinheiro em espécie, o viajante pode comprar
+          moeda estrangeira também em outras formas, como cartões pré-pagos. O
+          interessado só precisa se certificar que está comprando de instituição
+          autorizada pelo BC.
+        </h5>
+
+        <h2>Remessas pessoais</h2>
+
+        <h5>
+          As pessoas podem também receber e enviar dinheiro para o exterior por
+          meio de operações no mercado de câmbio, com participação de
+          instituições autorizadas.
+        </h5>
+
+        <h2>Importação e exportação</h2>
+
+        <h5>
+          A empresa que faz transações comerciais com outros países conta com
+          diversas maneiras para receber pelos seus produtos e serviços vendidos
+          e para pagar seus compromissos.
+        </h5>
+      </ContainerContent>
     </Container>
   );
 }
