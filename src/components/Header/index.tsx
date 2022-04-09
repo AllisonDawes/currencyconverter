@@ -1,12 +1,14 @@
 import React from "react";
 
+import logoConverter from "../../assets/logo-converter.png";
+
 import { Container } from "./styles";
 
 export function Header() {
   return (
     <Container>
       <div>
-        <h2>converter.com</h2>
+        <img src={logoConverter} alt="" />
 
         <div>
           <ul>

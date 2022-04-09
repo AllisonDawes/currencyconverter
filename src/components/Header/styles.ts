@@ -4,10 +4,8 @@ export const Container = styled.header`
   background: var(--secundary);
 
   div {
-    max-width: 1120px;
-    margin: 0 auto;
     padding: 2rem 1rem 0.2rem;
-
+    width: 100%;
     display: grid;
 
     h2 {
@@ -15,8 +13,14 @@ export const Container = styled.header`
       margin-bottom: 1rem;
     }
 
+    img {
+      height: 1.2rem;
+      margin-bottom: 15px;
+    }
+
     div {
-      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
 
       ul {
         margin: 0;
