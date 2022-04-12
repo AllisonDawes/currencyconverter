@@ -9,16 +9,6 @@ export function Header() {
     <Container>
       <div>
         <img src={logoConverter} alt="" />
-
-        <div>
-          <ul>
-            <li>
-              <a href="#">Conversor de Moedas</a>
-              <a href="#">Links</a>
-              <a href="#">Sobre</a>
-            </li>
-          </ul>
-        </div>
       </div>
     </Container>
   );
