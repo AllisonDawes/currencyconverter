@@ -1,6 +1,6 @@
 import React from "react";
 
-import logoConverter from "../../assets/logo-converter.png";
+import logoConverter from "../../assets/logo-converterdws.png";
 
 import { Container } from "./styles";
 

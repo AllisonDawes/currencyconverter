@@ -283,7 +283,7 @@ export function Converter() {
                 series={series}
                 type="area"
                 height={160}
-                width={400}
+                width={360}
               />
             </div>
           </div>

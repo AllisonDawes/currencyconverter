@@ -4,7 +4,10 @@ export const Container = styled.div`
   form {
     @media (max-width: 540px) {
       min-width: 24rem;
-      width: 1rem;
+
+      @media (max-width: 360px) {
+        min-width: 22rem;
+      }
     }
 
     background: var(--secundary);
@@ -72,7 +75,6 @@ export const Container = styled.div`
 export const ContainerInfo = styled.div`
   @media (max-width: 540px) {
     min-width: 24rem;
-    width: 1rem;
   }
 
   min-width: 38rem;
@@ -136,6 +138,10 @@ export const Separator = styled.div`
 export const ContainerContent = styled.div`
   @media (max-width: 540px) {
     max-width: 24rem;
+
+    @media (max-width: 360px) {
+      max-width: 22rem;
+    }
   }
 
   max-width: 38rem;
